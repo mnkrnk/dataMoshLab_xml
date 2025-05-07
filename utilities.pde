@@ -151,9 +151,8 @@ File[] getFiles(String dirPath, String extension) {
   File dir = new File(dirPath);
   if (!dir.isDirectory()) {
     println(dirPath + " is not a valid directory.");
-    return new File[0];
   }
-
+  
   return dir.listFiles(new FilenameFilter() {
     public boolean accept(File dir, String name) {
       return name.toLowerCase().endsWith("." + extension.toLowerCase());

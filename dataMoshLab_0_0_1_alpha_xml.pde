@@ -45,7 +45,7 @@ boolean centerText, delete;
 
 int photoNumber = 0; //input photo index
 
-String screenText, filePath;
+String screenText, filePath, fileName, dateTime;
 
 float rad = radians(90);
 
@@ -59,6 +59,10 @@ void setup() {
   colorMode(HSB);
 
   inputFiles = getFiles("data", "jpg");
+  if (inputFiles.length == 0){
+    throw new RuntimeException("No photos in data folder, program stopped.");
+  }
+  
   
   imgOrigen = loadImage(inputFiles[photoNumber].getAbsolutePath());
   
@@ -450,7 +454,9 @@ void draw() {
   }
   
   if (saveImg) {
-    saveFrame("output/" + photoNumber + "###.png");
+    fileName = inputFiles[photoNumber].getName();
+    dateTime = nf(year(), 4) + nf(month(), 2) + nf(day(), 2) + "_" + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2); //chatgpt wrote this xdd
+    saveFrame("output/" + fileName.substring(0, fileName.length() - 4) + "_" + dateTime + ".png");
   }
   
   if (delete){
