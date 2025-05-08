@@ -1,40 +1,45 @@
-import processing.net.*; 
-import java.io.*;
-import g4p_controls.*;
+//<DATA MOSH LAB v0.1.0b>//
 
-//<DATA MOSH LAB v0.0.1a>//
-
-/* HSB and RGB sorts, data paintbrush(NOT YET LMAO SHIT'S HARD AS FUCK), some filters
+/* HSB and RGB sorts, data paintbrush(NOT YET IMPLEMENTED), some filters
  
  lots of stolen functions, so feel free to steal this too :D
+ 
+ shoutouts to Peter Lager for the GUI library, the coding train for endless fun projects (and the fs dither present here) and tim rodenbröker for the rasterizer idea!
+ and massive thanks to everyone that posts on the processing forum, i got to resolve lots of issues just surfing through there :D
  
  mnkrnk - 2023 - 2025 */
  
  
 /* PENDINGS AND STUFF
-FILE MANAGEMENT --> better file save names to prevent overwriting 
-(read last with same og file pattern and slap the same number + 1?)
 
-GUI --> in process
-add missing functionalities (the other masks, mask summing)
-about mask summing... how the FUCK can i make a mask matrix?
+  GUI --> in process
+  add missing functionalities (the other masks, mask summing)
+  about mask summing... how the FUCK can i make a mask-sort matrix?
 
-SOME SORT OF CHAIN SORTING SETUP --> HOW??¿¿¿¿¿ i fucking wish lmao
+  text alpha knob or slider
+  position text fields
+  center checkbox
+  font selector
 
-text alpha knob or slider
-position text fields
-center checkbox
+  implement the data paintbrush (code not here i think)
+  implement missing masks (mostly rectangle and elliptical ones)
 
-*/
+  photo size slider/field/whatever
+
+  */
+
+import processing.net.*; 
+import java.io.*;
+import g4p_controls.*;
 
 //all photos will be rescaled to the value (in pixels) below:
 int pxSize = 1000; //you can use this value later to make filters scale up and down automatically (img.height or img.width will also work once the image is resized)
 
-//select the font you want to use copying the filename to this variable:
+//select the font you want to use copying the filename to this variable: (this will 100% be replaced by a dropdown menu that reads fonts from the font folder, just like it should be)
 String selectedFont = "ModeSevenBETAVHS2021.ttf";
 
 
-//theese can be left as they are
+//these can be left as they are
 int pxMaskSize = round(pxSize / 4);
 int minBright, maxBright, ditherAmt, rasterTiles, posterAmt, arrayThresh, textSize, xText, yText, textAlpha, idxUndo;
 PImage imgOrigen, imgSorted, imgMask1, imgMask2, imgMask3, imgMaskDraw, imageText;
@@ -51,7 +56,6 @@ float rad = radians(90);
 
 File[] tempFiles, inputFiles;
 
-//setup loop, just skip to the draw loop
 
 void setup() {
   frameRate(30);
@@ -90,7 +94,6 @@ void setup() {
   font = createFont("fonts/" + selectedFont, pxSize/10);
   idxUndo = 0;
   delete = true;
-  
   
   
   //GUI related setups
@@ -139,6 +142,7 @@ void draw() {
     imgMask2 = imgMask1.copy();
     imgMask3 = imgMask1.copy();
 
+    //this comes from the first version of this program, i'm not sure i still need to prevent the img window to be resized but i don't really want to find out lmao
     surface.setResizable(true);//???????¿¿¿¿¿¿¿¿¿¿¿
     surface.setSize(imgSorted.width, imgSorted.height);
     surface.setResizable(false);//???????¿¿¿¿¿¿¿¿¿¿¿
@@ -182,11 +186,6 @@ void draw() {
 
 
   //SORTING -- everything responds to its respective checkbox and slider (if any)
-  /*PENDING
-  threshold and no mask
-  chaining
-  custom masks, more than one mask, etc
-  */
   if (sort) {    
     minBright = int(minBrightSlider.getValueS());
     maxBright = int(maxBrightSlider.getValueS());
@@ -453,12 +452,14 @@ void draw() {
     text = false;
   }
   
+  //save frame feature, will slap the current date time to the og file name and save it in the output folder
   if (saveImg) {
     fileName = inputFiles[photoNumber].getName();
     dateTime = nf(year(), 4) + nf(month(), 2) + nf(day(), 2) + "_" + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2); //chatgpt wrote this xdd
     saveFrame("output/" + fileName.substring(0, fileName.length() - 4) + "_" + dateTime + ".png");
   }
   
+  //everytime we reset -and on startup- every png in the temp folder will be deleted (this is used for the undo feature, the rasterizer and the text function)
   if (delete){
     tempFiles = getFiles("temp", "png");
     
