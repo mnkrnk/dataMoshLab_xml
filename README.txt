@@ -5,6 +5,9 @@
 alright, as this stands right now its just a glorified pixel sorter, but theres a lot of code already written that has not yet been implemented since i JUST made the GUI.
 once i figure out how to present these features in said GUI, i will throw some updates so that everything lying around the project is usable.
 
+shoutouts to Peter Lager for the GUI library, the coding train for endless fun projects (and the fs dither present here) and tim rodenbröker for the rasterizer idea!
+and massive thanks to everyone that posts on the processing forum, i got to resolve lots of issues just surfing through there :D
+
 1- installation and setup --> only needed for first time setup
 	download and install processing (v4.3 or newer)
 	open sketch (double click on any ".pde" file within the sketch folder, they should all open at once since they are part of the same project).
