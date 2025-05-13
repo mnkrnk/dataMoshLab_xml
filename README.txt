@@ -57,13 +57,14 @@ and massive thanks to everyone that posts on the processing forum, i got to reso
 
 	-horizontal: will sort pixels horizontally
 
-	-invert: will invert the behavior of the thresholds. When this is selected, the algorithm will check for pixels outside of the defined range. (instead of maxBright > x > minBright, its x < minBright && x > maxBright)
+	-invert: will invert the behavior of the thresholds. When this is selected, the algorithm will check for pixels outside of the defined range. 
+	(instead of maxBright > x > minBright, its x < minBright && x > maxBright)
 
 	-masked: will sort pixels based on an input mask, an image with only black and white pixels (more on this later)
 	the parameters for the mask are the same as the parameters for the unmasked sorts, so the same brightness sliders work both ways.
 
    the last checkbox (that has it's own slider) is the threshold: this value will control the maximum amount of pixels we can sort at any given time.
-   this will create a sort of "stepped" effect, it works really well with extreme settings to allow for whatever figures we have in the image to not just turn into a giant blur.
+   this will create a sort of "stepped" effect, it works really well with extreme settings to allow for whatever figures we have in the image to not just turn into a giant     blur.
    
    this will all make sense... eventually :P
    */
@@ -73,10 +74,11 @@ and massive thanks to everyone that posts on the processing forum, i got to reso
    the filtering section allows for some post-sort goodness.
    same as with the sorts, we will be presented with a series of checkboxes to select what filter we want to apply, as well as some parameters for specific filters.
 
-	-dither: floyd-steinberg dithering (shoutout to the coding train :D), aka error diffusion dithering, the slider here will represent the amount of "cuts" our color scale has.
+	-dither: floyd-steinberg dithering (shoutout to the coding train :D), aka error diffusion dithering, the slider here will represent the amount of "cuts" our color 	scale has.
 	for example, a value of 2 will result in 3 different "shades" of each color
 
-	-rasterize: lmao how the fuck do i explain this (shoutout to creativecoding)
+	-rasterize: i honestly don't know how to explain this lmao, just chech the video where i took the idea from: https://www.youtube.com/watch?v=XO8u0Y75FRk
+	(shoutout to tim rodenbröker)
 
 	-posterize: built in processing filter, we can control the input value with the given slider.
 
