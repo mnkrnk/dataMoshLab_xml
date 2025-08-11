@@ -5,18 +5,20 @@ ALL HSB SORTS
  LAST WITH ARRAY THRESHOLD
  */
 
+
+
 PImage hsbV (PImage img, int minBrThresh, int maxBrThresh, boolean hueFlg, boolean satFlg, boolean briFlg) {
   colorMode(HSB);
   float minBrightness = minBrThresh;
   float maxBrightness = maxBrThresh;
-  
+
   //we loop through the image, if we want to sort vertically we start with columns and then nest another loop to check for each pixel below our first row
   //if we want a horizontal sort we just swap the order of the for each loops (check hsbH)
   //we want to check what pixels have a brightness that sits between our input thresholds "minBrThresh" and "maxBrThresh"
   //all pixels that meet the condition will be stored in an array
   //once a pixel outside the range is found -or we just get to the end of the image- we will sort those pixels and reintroduce them in the original image
   //this process is just copy and pasted in all the other sorts, with some functionality added that will be commented as it shows up
-  
+
   for (int i = 0; i < img.width; i++) { //for each column...
 
     int startRow = 0;
@@ -77,7 +79,7 @@ PImage hsbV (PImage img, int minBrThresh, int maxBrThresh, boolean hueFlg, boole
         pxSortIndex = 0;
 
         for (int x = 0; x < refArr.length; x++) { //the pixel replacing, literally manually setting the HSB values of each pixel xdd
-          
+
           int pxRef = refArr[x];
           img.pixels[pxRef] = color(hueArr[x], satArr[x], briArr[x]);
         }
@@ -667,13 +669,23 @@ PImage hsbMISH (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean
 
 //3RD SORTS - added the possibility to limit the max amount of pixels within each array, so that you get the "stepped" effect instead of just a continuous gradient
 //vertical
+
 PImage hsbMSVT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean briFlg, int arrThresh) {
   colorMode(HSB);
+  int inputArr = arrThresh;
+
   for (int i = 0; i < img.width; i++) {
 
     int startRow = 0;
     int endRow = 0;
+
+    int randArr;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.height; j++) {
 
@@ -755,12 +767,19 @@ PImage hsbMSVT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean
 //vertical inverted
 PImage hsbMISVT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean briFlg, int arrThresh) {
   colorMode(HSB);
+  int inputArr = arrThresh;
 
   for (int i = 0; i < img.width; i++) {
 
     int startRow = 0;
     int endRow = 0;
+    int randArr;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.height; j++) {
 
@@ -843,12 +862,19 @@ PImage hsbMISVT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolea
 //horizontal
 PImage hsbMSHT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean briFlg, int arrThresh) {
   colorMode(HSB);
+  int inputArr = arrThresh;
 
   for (int i = 0; i < img.height; i++) {
 
     int startRow = 0;
     int endRow = 0;
+    int randArr;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.width; j++) {
 
@@ -931,18 +957,25 @@ PImage hsbMSHT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean
 //horizontal inverted
 PImage hsbMISHT (PImage img, PImage mask, boolean hueFlg, boolean satFlg, boolean briFlg, int arrThresh) {
   colorMode(HSB);
+  int inputArr = arrThresh;
 
   for (int i = 0; i < img.height; i++) {
 
     int startRow = 0;
     int endRow = 0;
+    int randArr;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.width; j++) {
 
       int pxPos = pxIndex(j, i, img.width);
-
       float briTemp;
+
       if (j == img.width - 1) {
         briTemp = 255;
         endRow = endRow + 1;

@@ -44,7 +44,7 @@ PImage rgbV (PImage img, int minBrThresh, int maxBrThresh, boolean redFlg, boole
         for (int x = startRow; x <= endRow; x++) {
 
           int pxIndex = pxIndex(i, x, img.width);
-          
+
           //this is basically the only difference with the hsb sorts
           float red = red(img.pixels[pxIndex]);
           float green = green(img.pixels[pxIndex]);
@@ -733,12 +733,19 @@ PImage rgbDMSV (PImage img, PImage mask1, PImage mask2, boolean redFlg, boolean 
 //3RD SORTS
 PImage rgbMSVT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, boolean blueFlg, int arrThresh) {
   colorMode(RGB);
+  int inputArr = arrThresh;
+  int randArr;
 
   for (int i = 0; i < img.width; i++) {
 
     int startRow = 0;
     int endRow = 0;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.height; j++) {
 
@@ -822,12 +829,19 @@ PImage rgbMSVT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, boole
 
 PImage rgbMISVT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, boolean blueFlg, int arrThresh) {
   colorMode(RGB);
+  int inputArr = arrThresh;
+  int randArr;
 
   for (int i = 0; i < img.width; i++) {
 
     int startRow = 0;
     int endRow = 0;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.height; j++) {
 
@@ -908,12 +922,19 @@ PImage rgbMISVT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, bool
 
 PImage rgbMSHT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, boolean blueFlg, int arrThresh) {
   colorMode(RGB);
+  int inputArr = arrThresh;
+  int randArr;
 
   for (int i = 0; i < img.height; i++) {
 
     int startRow = 0;
     int endRow = 0;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.width; j++) {
 
@@ -995,12 +1016,19 @@ PImage rgbMSHT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, boole
 
 PImage rgbMISHT (PImage img, PImage mask, boolean redFlg, boolean greenFlg, boolean blueFlg, int arrThresh) {
   colorMode(RGB);
+  int inputArr = arrThresh;
+  int randArr;
 
   for (int i = 0; i < img.height; i++) {
 
     int startRow = 0;
     int endRow = 0;
     boolean sort = false;
+
+    if (randThreshCheckbox.isSelected()) {//rand thresh check, check before 2nd loop
+      randArr = int(randThreshSlider.getValueS());
+      arrThresh = abs(int(random(inputArr - randArr, inputArr + randArr)));
+    }
 
     for (int j = 0; j < img.width; j++) {
 

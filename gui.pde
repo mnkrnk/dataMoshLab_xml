@@ -3,124 +3,232 @@ public void win_draw1(PApplet appc, GWinData data) { //_CODE_:MainGUI:244785:
 } //_CODE_:MainGUI:244785:
 
 public void textarea1_change1(GTextArea source, GEvent event) { //_CODE_:txaEvents:975127:
-  txaEvents.appendText("textarea1 - GTextArea >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("textarea1 - GTextArea >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:txaEvents:975127:
 
 public void minBrightSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:minBrightSlider:902947:
-  txaEvents.appendText("minBrightSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("minBrightSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:minBrightSlider:902947:
 
 public void maxBrightSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:maxBrightSlider:279687:
-  txaEvents.appendText("maxBrightSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("maxBrightSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:maxBrightSlider:279687:
 
 public void sortButton_click1(GButton source, GEvent event) { //_CODE_:sortButton:814075:
-  txaEvents.appendText("sortButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("sortButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:sortButton:814075:
 
 public void ditherCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:ditherCheckbox:456197:
-  txaEvents.appendText("dither - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("dither - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:ditherCheckbox:456197:
 
 public void rasterizeCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:rasterizeCheckbox:411163:
-  txaEvents.appendText("rasterizeCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("rasterizeCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:rasterizeCheckbox:411163:
 
 public void erodeCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:erodeCheckbox:234483:
-  txaEvents.appendText("erodeCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("erodeCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:erodeCheckbox:234483:
 
 public void rasterizeSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:rasterizeSlider:528703:
-  txaEvents.appendText("rasterizeSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("rasterizeSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:rasterizeSlider:528703:
 
 public void ditherSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:ditherSlider:469310:
-  txaEvents.appendText("ditherSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("ditherSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:ditherSlider:469310:
 
 public void filterButton_click1(GButton source, GEvent event) { //_CODE_:filterButton:450558:
-  txaEvents.appendText("filterButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("filterButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:filterButton:450558:
 
 public void resetButton_click1(GButton source, GEvent event) { //_CODE_:resetButton:879248:
-  txaEvents.appendText("resetButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("resetButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:resetButton:879248:
 
 public void button3_click1(GButton source, GEvent event) { //_CODE_:saveButton:684021:
-  txaEvents.appendText("saveButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("saveButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:saveButton:684021:
 
 public void horizontalCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:horizontalCheckbox:314863:
-  txaEvents.appendText("horizontalCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("horizontalCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:horizontalCheckbox:314863:
 
 public void verticalCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:verticalCheckbox:908750:
-  txaEvents.appendText("verticalCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("verticalCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:verticalCheckbox:908750:
 
 public void dilateCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:dilateCheckbox:220130:
-  txaEvents.appendText("dilateCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("dilateCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:dilateCheckbox:220130:
 
 public void posterizeSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:posterizeSlider:408506:
-  txaEvents.appendText("posterizeSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("posterizeSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:posterizeSlider:408506:
 
 public void posterizeCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:posterizeCheckbox:726124:
-  txaEvents.appendText("posterizeCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("posterizeCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:posterizeCheckbox:726124:
 
 public void maskCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:maskCheckbox:718807:
-  txaEvents.appendText("maskCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("maskCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:maskCheckbox:718807:
 
 public void hsbCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:hsbCheckbox:817910:
-  txaEvents.appendText("hsbCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("hsbCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:hsbCheckbox:817910:
 
 public void rgbCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:rgbCheckbox:726029:
-  txaEvents.appendText("rgbCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("rgbCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:rgbCheckbox:726029:
 
 public void invertCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:invertCheckbox:495035:
-  txaEvents.appendText("invertCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("invertCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:invertCheckbox:495035:
 
 public void threshSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:threshSlider:822293:
-  txaEvents.appendText("threshSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("threshSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:threshSlider:822293:
 
 public void threshCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:threshCheckbox:676921:
-  txaEvents.appendText("threshCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("threshCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:threshCheckbox:676921:
 
 public void textInput_change1(GTextField source, GEvent event) { //_CODE_:textInput:570198:
-  txaEvents.appendText("textInput - GTextField >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("textInput - GTextField >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:textInput:570198:
 
 public void textOutlineCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:textOutlineCheckbox:943665:
-  txaEvents.appendText("textOutlineCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("textOutlineCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:textOutlineCheckbox:943665:
 
 public void textSizeSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:textSizeSlider:791134:
-  txaEvents.appendText("textSizeSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("textSizeSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:textSizeSlider:791134:
 
 public void textButton_click1(GButton source, GEvent event) { //_CODE_:textButton:251235:
-  txaEvents.appendText("button1 - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("button1 - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:textButton:251235:
 
 public void undoButton_click1(GButton source, GEvent event) { //_CODE_:undoButton:631654:
-  txaEvents.appendText("undoButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("undoButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:undoButton:631654:
 
 public void prevButton_click1(GButton source, GEvent event) { //_CODE_:prevButton:929497:
-  println("prevButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("prevButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:prevButton:929497:
 
 public void nextButton_click1(GButton source, GEvent event) { //_CODE_:nextButton:381296:
-  println("nextButton - GButton >> GEvent." + event + " @ " + millis());
+  if (events) {
+    txaEvents.appendText("nextButton - GButton >> GEvent." + event + " @ " + millis());
+  }
 } //_CODE_:nextButton:381296:
+
+public void eventsCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:eventsCheckbox:321478:
+  if (events) {
+    txaEvents.appendText("eventsCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:eventsCheckbox:321478:
+
+public void randThreshCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:randThreshCheckbox:965019:
+  if (events) {
+    txaEvents.appendText("randThreshCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:randThreshCheckbox:965019:
+
+public void randThreshSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:randThreshSlider:379749:
+  if (events) {
+    txaEvents.appendText("custom_slider1 - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:randThreshSlider:379749:
+
+public void fontCombo_click1(GDropList source, GEvent event) { //_CODE_:fontCombo:526910:
+  if (events) {
+    txaEvents.appendText("fontCombo - GDropList >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:fontCombo:526910:
+
+public void textXSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:textXSlider:538761:
+  if (events) {
+    txaEvents.appendText("textXSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:textXSlider:538761:
+
+public void custom_slider2_change1(GCustomSlider source, GEvent event) { //_CODE_:textYSlider:414497:
+  if (events) {
+    txaEvents.appendText("custom_slider2 - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:textYSlider:414497:
+
+public void centerTextCheckbox_clicked1(GCheckbox source, GEvent event) { //_CODE_:centerTextCheckbox:552814:
+  if (events) {
+    txaEvents.appendText("centerTextCheckbox - GCheckbox >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:centerTextCheckbox:552814:
+
+public void alphaSlider_change1(GCustomSlider source, GEvent event) { //_CODE_:alphaSlider:319211:
+  if (events) {
+    txaEvents.appendText("alphaSlider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  }
+} //_CODE_:alphaSlider:319211:
 
 
 
@@ -131,11 +239,11 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.PURPLE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("mnk's data mosh lab - image");
-  MainGUI = GWindow.getWindow(this, "mnk's data mosh lab", 100, 95, 500, 450, JAVA2D);
+  MainGUI = GWindow.getWindow(this, "mnk's data mosh lab", 100, 95, 500, 550, JAVA2D);
   MainGUI.noLoop();
   MainGUI.setActionOnClose(G4P.KEEP_OPEN);
   MainGUI.addDrawHandler(this, "win_draw1");
-  txaEvents = new GTextArea(MainGUI, 2, 360, 490, 85, G4P.SCROLLBARS_VERTICAL_ONLY | G4P.SCROLLBARS_AUTOHIDE);
+  txaEvents = new GTextArea(MainGUI, 2, 460, 490, 85, G4P.SCROLLBARS_VERTICAL_ONLY | G4P.SCROLLBARS_AUTOHIDE);
   txaEvents.setLocalColorScheme(GCScheme.GREEN_SCHEME);
   txaEvents.setOpaque(true);
   txaEvents.addEventHandler(this, "textarea1_change1");
@@ -157,7 +265,7 @@ public void createGUI(){
   maxBrightSlider.setNumberFormat(G4P.INTEGER, 0);
   maxBrightSlider.setOpaque(false);
   maxBrightSlider.addEventHandler(this, "maxBrightSlider_change1");
-  sortButton = new GButton(MainGUI, 165, 245, 80, 30);
+  sortButton = new GButton(MainGUI, 160, 355, 80, 30);
   sortButton.setText("sort");
   sortButton.addEventHandler(this, "sortButton_click1");
   ditherCheckbox = new GCheckbox(MainGUI, 255, 30, 100, 20);
@@ -196,15 +304,15 @@ public void createGUI(){
   filterButton = new GButton(MainGUI, 415, 145, 80, 30);
   filterButton.setText("filter");
   filterButton.addEventHandler(this, "filterButton_click1");
-  resetButton = new GButton(MainGUI, 245, 320, 80, 30);
+  resetButton = new GButton(MainGUI, 245, 420, 80, 30);
   resetButton.setText("reset");
   resetButton.setLocalColorScheme(GCScheme.RED_SCHEME);
   resetButton.addEventHandler(this, "resetButton_click1");
-  saveButton = new GButton(MainGUI, 415, 320, 80, 30);
+  saveButton = new GButton(MainGUI, 415, 420, 80, 30);
   saveButton.setText("save");
   saveButton.setLocalColorScheme(GCScheme.GREEN_SCHEME);
   saveButton.addEventHandler(this, "button3_click1");
-  eventsLabel = new GLabel(MainGUI, 5, 340, 60, 20);
+  eventsLabel = new GLabel(MainGUI, 5, 440, 60, 20);
   eventsLabel.setText("events");
   eventsLabel.setOpaque(false);
   horizontalCheckbox = new GCheckbox(MainGUI, 60, 30, 50, 20);
@@ -267,7 +375,7 @@ public void createGUI(){
   threshSlider.setShowValue(true);
   threshSlider.setShowLimits(true);
   threshSlider.setLimits(1, 1, 500);
-  threshSlider.setNbrTicks(499);
+  threshSlider.setNbrTicks(999);
   threshSlider.setEasing(4.0);
   threshSlider.setNumberFormat(G4P.INTEGER, 0);
   threshSlider.setOpaque(false);
@@ -283,14 +391,14 @@ public void createGUI(){
   maxBrightLabel = new GLabel(MainGUI, 5, 125, 240, 20);
   maxBrightLabel.setText("maximum brightness");
   maxBrightLabel.setOpaque(false);
-  separator = new GLabel(MainGUI, 5, 290, 490, 20);
+  separator = new GLabel(MainGUI, 5, 390, 490, 20);
   separator.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   separator.setText("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
   separator.setOpaque(false);
   textLabel = new GLabel(MainGUI, 255, 180, 80, 20);
   textLabel.setText("text size");
   textLabel.setOpaque(false);
-  textInput = new GTextField(MainGUI, 255, 250, 240, 30, G4P.SCROLLBARS_HORIZONTAL_ONLY | G4P.SCROLLBARS_AUTOHIDE);
+  textInput = new GTextField(MainGUI, 255, 355, 240, 30, G4P.SCROLLBARS_HORIZONTAL_ONLY | G4P.SCROLLBARS_AUTOHIDE);
   textInput.setPromptText("type here");
   textInput.setOpaque(true);
   textInput.addEventHandler(this, "textInput_change1");
@@ -308,19 +416,77 @@ public void createGUI(){
   textSizeSlider.setNumberFormat(G4P.INTEGER, 0);
   textSizeSlider.setOpaque(false);
   textSizeSlider.addEventHandler(this, "textSizeSlider_change1");
-  textButton = new GButton(MainGUI, 415, 215, 80, 30);
+  textButton = new GButton(MainGUI, 415, 320, 80, 30);
   textButton.setText("text");
   textButton.addEventHandler(this, "textButton_click1");
-  undoButton = new GButton(MainGUI, 330, 320, 80, 30);
+  undoButton = new GButton(MainGUI, 330, 420, 80, 30);
   undoButton.setText("undo");
   undoButton.setLocalColorScheme(GCScheme.ORANGE_SCHEME);
   undoButton.addEventHandler(this, "undoButton_click1");
-  prevButton = new GButton(MainGUI, 75, 320, 80, 30);
+  prevButton = new GButton(MainGUI, 75, 420, 80, 30);
   prevButton.setText("previous");
   prevButton.addEventHandler(this, "prevButton_click1");
-  nextButton = new GButton(MainGUI, 160, 320, 80, 30);
+  nextButton = new GButton(MainGUI, 160, 420, 80, 30);
   nextButton.setText("next");
   nextButton.addEventHandler(this, "nextButton_click1");
+  eventsCheckbox = new GCheckbox(MainGUI, 5, 420, 60, 20);
+  eventsCheckbox.setIconAlign(GAlign.LEFT, GAlign.MIDDLE);
+  eventsCheckbox.setOpaque(false);
+  eventsCheckbox.addEventHandler(this, "eventsCheckbox_clicked1");
+  randThreshCheckbox = new GCheckbox(MainGUI, 125, 205, 120, 20);
+  randThreshCheckbox.setIconAlign(GAlign.LEFT, GAlign.MIDDLE);
+  randThreshCheckbox.setText("randomize thresh");
+  randThreshCheckbox.setOpaque(false);
+  randThreshCheckbox.addEventHandler(this, "randThreshCheckbox_clicked1");
+  randThreshSlider = new GCustomSlider(MainGUI, 125, 225, 115, 50, "purple18px");
+  randThreshSlider.setShowValue(true);
+  randThreshSlider.setShowLimits(true);
+  randThreshSlider.setLimits(1, 1, 500);
+  randThreshSlider.setNbrTicks(499);
+  randThreshSlider.setEasing(4.0);
+  randThreshSlider.setNumberFormat(G4P.INTEGER, 0);
+  randThreshSlider.setOpaque(false);
+  randThreshSlider.addEventHandler(this, "randThreshSlider_change1");
+  fontCombo = new GDropList(MainGUI, 375, 230, 120, 80, 3, 10);
+  fontCombo.setItems(loadStrings("list_526910"), 1);
+  fontCombo.addEventHandler(this, "fontCombo_click1");
+  textXSlider = new GCustomSlider(MainGUI, 255, 255, 100, 50, "purple18px");
+  textXSlider.setLimits(1, 1, 10000);
+  textXSlider.setEasing(4.0);
+  textXSlider.setNumberFormat(G4P.INTEGER, 0);
+  textXSlider.setOpaque(false);
+  textXSlider.addEventHandler(this, "textXSlider_change1");
+  textYSlider = new GCustomSlider(MainGUI, 255, 305, 100, 50, "purple18px");
+  textYSlider.setLimits(1, 1, 10000);
+  textYSlider.setEasing(4.0);
+  textYSlider.setNumberFormat(G4P.INTEGER, 0);
+  textYSlider.setOpaque(false);
+  textYSlider.addEventHandler(this, "custom_slider2_change1");
+  centerTextCheckbox = new GCheckbox(MainGUI, 376, 204, 80, 20);
+  centerTextCheckbox.setIconAlign(GAlign.LEFT, GAlign.MIDDLE);
+  centerTextCheckbox.setText("centered");
+  centerTextCheckbox.setOpaque(false);
+  centerTextCheckbox.addEventHandler(this, "centerTextCheckbox_clicked1");
+  alphaSlider = new GCustomSlider(MainGUI, 375, 265, 115, 50, "purple18px");
+  alphaSlider.setShowValue(true);
+  alphaSlider.setShowLimits(true);
+  alphaSlider.setLimits(127, 0, 127);
+  alphaSlider.setEasing(4.0);
+  alphaSlider.setNumberFormat(G4P.INTEGER, 0);
+  alphaSlider.setOpaque(false);
+  alphaSlider.addEventHandler(this, "alphaSlider_change1");
+  textXLabel = new GLabel(MainGUI, 255, 250, 80, 20);
+  textXLabel.setText("text X");
+  textXLabel.setOpaque(false);
+  textYLabel = new GLabel(MainGUI, 255, 300, 80, 20);
+  textYLabel.setText("text Y");
+  textYLabel.setOpaque(false);
+  textAlphaLabel = new GLabel(MainGUI, 375, 255, 80, 20);
+  textAlphaLabel.setText("opacity");
+  textAlphaLabel.setOpaque(false);
+  fontLabel = new GLabel(MainGUI, 465, 210, 30, 20);
+  fontLabel.setText("font");
+  fontLabel.setOpaque(false);
   MainGUI.loop();
 }
 
@@ -364,3 +530,15 @@ GButton textButton;
 GButton undoButton; 
 GButton prevButton; 
 GButton nextButton; 
+GCheckbox eventsCheckbox; 
+GCheckbox randThreshCheckbox; 
+GCustomSlider randThreshSlider; 
+GDropList fontCombo; 
+GCustomSlider textXSlider; 
+GCustomSlider textYSlider; 
+GCheckbox centerTextCheckbox; 
+GCustomSlider alphaSlider; 
+GLabel textXLabel; 
+GLabel textYLabel; 
+GLabel textAlphaLabel; 
+GLabel fontLabel; 

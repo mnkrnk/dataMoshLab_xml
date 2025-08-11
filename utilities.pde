@@ -79,24 +79,24 @@ int[] sortIntPxArr (int[] pxArr) {
 //outlined text, taken from the processing forum. ty jpkelly26 :D
 void strokeText(String message, int x, int y, int alpha, boolean stroke)
 {
-  if (stroke){
-  fill(0, alpha);
-  text(message, x-1, y);
-  text(message, x, y-1);
-  text(message, x+1, y);
-  text(message, x, y+1);
+  if (stroke) {
+    fill(0, alpha);
+    text(message, x-1, y);
+    text(message, x, y-1);
+    text(message, x+1, y);
+    text(message, x, y+1);
 
-  fill(255, alpha);
-  text(message, x, y);
+    fill(255, alpha);
+    text(message, x, y);
   } else {
-  fill(255, alpha);
-  text(message, x-1, y);
-  text(message, x, y-1);
-  text(message, x+1, y);
-  text(message, x, y+1);
+    fill(255, alpha);
+    text(message, x-1, y);
+    text(message, x, y-1);
+    text(message, x+1, y);
+    text(message, x, y+1);
 
-  fill(255, alpha);
-  text(message, x, y);
+    fill(255, alpha);
+    text(message, x, y);
   }
 }
 
@@ -118,65 +118,66 @@ PImage maskSum (PImage img1, PImage img2) {
 
 /*
 // function for running Unix commands (like ffmpeg) inside Processing (jeffreythompson love ya :D)
-void UnixCommand(String commandToRun) {
-  File workingDir = new File(sketchPath(""));
-  String returnedValues;
-  try {
-    Process p = Runtime.getRuntime().exec(commandToRun, null, workingDir);
-    int i = p.waitFor();
-    if (i == 0) {
-      BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-      while ( (returnedValues = stdInput.readLine ()) != null) {
-        // enable this option if you want to get updates when the process succeeds
-        // println("  " + returnedValues);
-      }
-    } else {
-      BufferedReader stdErr = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-      while ( (returnedValues = stdErr.readLine ()) != null) {
-        // print information if there is an error or warning (like if a file already exists, etc)
-        println("  " + returnedValues);
-      }
-    }
-  }
-
-  // if there is an error, let us know
-  catch (Exception e) {
-    println("Error running command: ");
-    println("     " + e);
-  }
-}
-*/
+ void UnixCommand(String commandToRun) {
+ File workingDir = new File(sketchPath(""));
+ String returnedValues;
+ try {
+ Process p = Runtime.getRuntime().exec(commandToRun, null, workingDir);
+ int i = p.waitFor();
+ if (i == 0) {
+ BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+ while ( (returnedValues = stdInput.readLine ()) != null) {
+ // enable this option if you want to get updates when the process succeeds
+ // println("  " + returnedValues);
+ }
+ } else {
+ BufferedReader stdErr = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+ while ( (returnedValues = stdErr.readLine ()) != null) {
+ // print information if there is an error or warning (like if a file already exists, etc)
+ println("  " + returnedValues);
+ }
+ }
+ }
+ 
+ // if there is an error, let us know
+ catch (Exception e) {
+ println("Error running command: ");
+ println("     " + e);
+ }
+ }
+ */
 
 File[] getFiles(String dirPath, String extension) {
   File dir = new File(dirPath);
   if (!dir.isDirectory()) {
     println(dirPath + " is not a valid directory.");
   }
-  
+
   return dir.listFiles(new FilenameFilter() {
     public boolean accept(File dir, String name) {
       return name.toLowerCase().endsWith("." + extension.toLowerCase());
     }
-  });
+  }
+  );
 }
 
 //button handler, replaces old keyReleased implementation
-public void handleButton(GButton button, GEvent event){
-  if (button == sortButton){
+public void handleButton(GButton button, GEvent event) {
+  if (button == sortButton) {
     sort = true;
-    
+
     idxUndo++;
     filePath = "temp/undo" + idxUndo + ".png";//save current frame for undo. this happens just before doing anything to the current canvas
     saveFrame(filePath);
   }
-  if (button == filterButton){
+  if (button == filterButton) {
     filter = true;
-    
+
     idxUndo++;
     filePath = "temp/undo" + idxUndo + ".png";//save current frame for undo. this happens just before doing anything to the current canvas
     saveFrame(filePath);
   }
-  if (button == resetButton){
+  if (button == resetButton) {
     imgSorted = imgOrigen.get();
     saveImg = false;
     text = false;
@@ -184,61 +185,67 @@ public void handleButton(GButton button, GEvent event){
     delete = true;
     idxUndo = 0;
   }
-  if (button == saveButton){
+  if (button == saveButton) {
     saveFrame("output/" + photoNumber + "###.png");
   }
-  if (button == textButton){
+  if (button == textButton) {
     text = true;
-    
+
     idxUndo++;
     filePath = "temp/undo" + idxUndo + ".png";//save current frame for undo. this happens just before doing anything to the current canvas
     saveFrame(filePath);
   }
-  if (button == undoButton){
-    if (idxUndo != 0){
+  if (button == undoButton) {
+    if (idxUndo != 0) {
       filePath = "temp/undo" + idxUndo + ".png";
       imgSorted = loadImage(filePath);
       idxUndo--;
     }
   }
-  if (button == prevButton){
+  if (button == prevButton) {
     prev = true;
   }
-  if (button == nextButton){
+  if (button == nextButton) {
     next = true;
   }
 }
 
-public void handleCheckbox(GCheckbox checkbox, GEvent event){
-  if (checkbox == hsbCheckbox){
-    if (hsbCheckbox.isSelected()){
+public void handleCheckbox(GCheckbox checkbox, GEvent event) {
+  if (checkbox == hsbCheckbox) {
+    if (hsbCheckbox.isSelected()) {
       rgbCheckbox.setSelected(false);
     }
   }
-  if (checkbox == rgbCheckbox){
-    if (rgbCheckbox.isSelected()){
+  if (checkbox == rgbCheckbox) {
+    if (rgbCheckbox.isSelected()) {
       hsbCheckbox.setSelected(false);
     }
   }
-  
-  if (checkbox == horizontalCheckbox){
-    if (horizontalCheckbox.isSelected()){
+
+  if (checkbox == horizontalCheckbox) {
+    if (horizontalCheckbox.isSelected()) {
       //unselect vert checkbox
     }
   }
-  if (checkbox == verticalCheckbox){
-    if (verticalCheckbox.isSelected()){
+  if (checkbox == verticalCheckbox) {
+    if (verticalCheckbox.isSelected()) {
       //unselect horiz checkbox
     }
   }
-  
-  if (checkbox == maskCheckbox){//if unselect mask, unselect threshold
-    if (checkbox.isSelected() == false){
+
+  if (checkbox == maskCheckbox) {//if unselect mask, unselect threshold
+    if (checkbox.isSelected() == false) {
       threshCheckbox.setSelected(false);
     }
   }
-  if (checkbox == threshCheckbox){//if threshold is selected, select mask
-    if (checkbox.isSelected()){
+  if (checkbox == threshCheckbox) {//if threshold is selected, select mask
+    if (checkbox.isSelected()) {
+      maskCheckbox.setSelected(true);
+    }
+  }
+  if (checkbox == randThreshCheckbox) {//if threshold is selected, select mask
+    if (checkbox.isSelected()) {
+      threshCheckbox.setSelected(true);
       maskCheckbox.setSelected(true);
     }
   }
@@ -246,52 +253,52 @@ public void handleCheckbox(GCheckbox checkbox, GEvent event){
 //old interface, it can be used as a hotkey thingy, just uncomment it
 /*
 void keyReleased() {
-  switch (key) {
-  case 't':
-    if (text == true) {
-      text = false;
-    } else {
-      text = true;
-    }
-    break;
-
-  case 'd':
-    if (saveImg == true) {
-      saveImg = false;
-    } else {
-      saveImg = true;
-    }
-    break;
-  case 's':
-    saveFrame("output/" + photoNumber + "###.png");
-    break;
-
-  case 'r':
-    imgSorted = imgOrigen.get();
-    saveImg = false;
-    text = false;
-    rasterize = false;
-    break;
-
-  case 'a':
-    sort = true;
-    break;
-
-  case 'f':
-    filter = true;
-    break;
-
-  case 'n':
-    prev = true;
-    break;
-
-  case 'm':
-    next = true;
-    break;
-    
-  case 'c':
-    rasterize = true;
-    break;
-  }
-}
-*/
+ switch (key) {
+ case 't':
+ if (text == true) {
+ text = false;
+ } else {
+ text = true;
+ }
+ break;
+ 
+ case 'd':
+ if (saveImg == true) {
+ saveImg = false;
+ } else {
+ saveImg = true;
+ }
+ break;
+ case 's':
+ saveFrame("output/" + photoNumber + "###.png");
+ break;
+ 
+ case 'r':
+ imgSorted = imgOrigen.get();
+ saveImg = false;
+ text = false;
+ rasterize = false;
+ break;
+ 
+ case 'a':
+ sort = true;
+ break;
+ 
+ case 'f':
+ filter = true;
+ break;
+ 
+ case 'n':
+ prev = true;
+ break;
+ 
+ case 'm':
+ next = true;
+ break;
+ 
+ case 'c':
+ rasterize = true;
+ break;
+ }
+ }
+ */
